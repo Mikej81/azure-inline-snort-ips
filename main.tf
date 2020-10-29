@@ -15,6 +15,10 @@ resource azurerm_public_ip ipspip01 {
   sku                 = "Standard"
 }
 
+output ips_pip {
+  value   = "ssh xadmin@${azurerm_public_ip.ipspip01.ip_address} pass: ${var.adminPassword}"
+}
+
 resource azurerm_storage_account ips_storageaccount {
   name                     = "diag${random_id.randomId.hex}"
   resource_group_name      = azurerm_resource_group.main.name
