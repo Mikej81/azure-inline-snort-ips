@@ -16,11 +16,18 @@ Once Terraform completes, you can verify cloud-init status by SSH to the managem
 cloud-init status --long
 ```
 
+If you cant wait and want to see whats happening.
+
+```bash
+tail -f /var/log/cloud-init-output.log
+```
+
 Verify snort is running.
 
 ```bash
 ps -ef | grep snort
 ```
+
 Configure your variables as needed.
 
 ```HCL
