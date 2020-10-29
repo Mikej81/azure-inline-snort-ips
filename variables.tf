@@ -1,29 +1,3 @@
-# Azure Inline Snort IPS
-
-Example / Test repo for Snort Inline IPS on Ubuntu in Azure using cloud-init, netplan, and terraform.
-
-Give cloud-init a few minutes to run to finish download / compiling.  Runs in AFPacket Inline with Eth1:Eth2.
-
-```bash
-terraform init
-terraform plan
-terraform apply -auto-approve
-```
-
-Once Terraform completes, you can verify cloud-init status by SSH to the management interface.
-
-```bash
-cloud-init status --long
-```
-
-Verify snort is running.
-
-```bash
-ps -ef | grep snort
-```
-Configure your variables as needed.
-
-```HCL
 # Azure Environment
 variable projectPrefix {
   type        = string
@@ -90,4 +64,3 @@ variable dns_server {
 variable ntp_server { default = "time.nist.gov" }
 variable timezone { default = "UTC" }
 variable onboard_log { default = "/var/log/startup-script.log" }
-```
