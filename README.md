@@ -2,6 +2,8 @@
 
 Example / Test repo for Snort Inline IPS on Ubuntu in Azure using cloud-init, netplan, and terraform.
 
+I needed this for something specific, so its not built out to be dynamic, but works in current state.
+
 Give cloud-init a few minutes to run to finish download / compiling.  Runs in AFPacket Inline with Eth1:Eth2.
 
 ```bash
